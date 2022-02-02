@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Fira Code:pixelsize=16:antialias=true:autohint=true";
+static char *font = "Monospace:pixelsize=18:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -16,7 +16,7 @@ static int borderpx = 2;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/usr/bin/zsh";
+static char *shell = "/bin/mksh";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
 char *scroll = NULL;
@@ -95,31 +95,48 @@ unsigned int tabspaces = 4;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+	/* /1* 8 normal colors *1/ */
+	/* "black", */
+	/* "red3", */
+	/* "green3", */
+	/* "yellow3", */
+	/* "blue2", */
+	/* "magenta3", */
+	/* "cyan3", */
+	/* "gray90", */
 
-	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+	/* /1* 8 bright colors *1/ */
+	/* "gray50", */
+	/* "red", */
+	/* "green", */
+	/* "yellow", */
+	/* "#5c5cff", */
+	/* "magenta", */
+	/* "cyan", */
+	/* "white", */
 
-	[255] = 0,
+	/* [255] = 0, */
 
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
+	/* /1* more colors can be added after 255 to use with DefaultXX *1/ */
+	/* "#cccccc", */
+	/* "#555555", */
+    /* solarized light */
+    "#eee8d5",  /*  0: black    */
+    "#dc322f",  /*  1: red      */
+    "#859900",  /*  2: green    */
+    "#b58900",  /*  3: yellow   */
+    "#268bd2",  /*  4: blue     */
+    "#d33682",  /*  5: magenta  */
+    "#2aa198",  /*  6: cyan     */
+    "#073642",  /*  7: white    */
+    "#fdf6e3",  /*  8: brblack  */
+    "#cb4b16",  /*  9: brred    */
+    "#93a1a1",  /* 10: brgreen  */
+    "#839496",  /* 11: bryellow */
+    "#657b83",  /* 12: brblue   */
+    "#6c71c4",  /* 13: brmagenta*/
+    "#586e75",  /* 14: brcyan   */
+    "#002b36",  /* 15: brwhite  */
 };
 
 
@@ -191,8 +208,8 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
-	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
+	{ XK_ANY_MOD,           XK_F12,         zoom,           {.f = +1} },
+	{ XK_ANY_MOD,           XK_F11,         zoom,           {.f = -1} },
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
 	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
