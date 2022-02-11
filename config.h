@@ -122,59 +122,59 @@ unsigned int tabspaces = 4;
 /* 	"#555555", */
 /* }; */
 
-static const char* colorname[] = {
-    [0] = "#323437",
-    [1] = "#ff5454",
-    [2] = "#8cc85f",
-    [3] = "#e3c78a",
-    [4] = "#80a0ff",
-    [5] = "#d183e8",
-    [6] = "#79dac8",
-    [7] = "#a1aab8",
-    [8] = "#7c8f8f",
-    [9] = "#ff5189",
-    [10] = "#36c692",
-    [11] = "#bfbf97",
-    [12] = "#74b2ff",
-    [13] = "#ae81ff",
-    [14] = "#85dc85",
-    [15] = "#e2637f",
+/* static const char* colorname[] = { */
+/*     [0] = "#323437", */
+/*     [1] = "#ff5454", */
+/*     [2] = "#8cc85f", */
+/*     [3] = "#e3c78a", */
+/*     [4] = "#80a0ff", */
+/*     [5] = "#d183e8", */
+/*     [6] = "#79dac8", */
+/*     [7] = "#a1aab8", */
+/*     [8] = "#7c8f8f", */
+/*     [9] = "#ff5189", */
+/*     [10] = "#36c692", */
+/*     [11] = "#bfbf97", */
+/*     [12] = "#74b2ff", */
+/*     [13] = "#ae81ff", */
+/*     [14] = "#85dc85", */
+/*     [15] = "#e2637f", */
      
-    [255] = 0,
-    [256] = "#282a36", 
-    [257] = "#f8f8f2",
-    [258] = "#080808",
-    [259]= "#eeeeee",
-};
+/*     [255] = 0, */
+/*     [256] = "#282a36", */ 
+/*     [257] = "#f8f8f2", */
+/*     [258] = "#080808", */
+/*     [259]= "#eeeeee", */
+/* }; */
 
-/* // Gruvbox light theme.*/
-/* static const char *colorname[] = {*/
-/*     "#eee8d5",  /*  0: black    */*/
-/*     "#dc322f",  /*  1: red      */*/
-/*     "#859900",  /*  2: green    */*/
-/*     "#b58900",  /*  3: yellow   */*/
-/*     "#268bd2",  /*  4: blue     */*/
-/*     "#d33682",  /*  5: magenta  */*/
-/*     "#2aa198",  /*  6: cyan     */*/
-/*     "#073642",  /*  7: white    */*/
-/*     "#fdf6e3",  /*  8: brblack  */*/
-/*     "#cb4b16",  /*  9: brred    */*/
-/*     "#93a1a1",  /* 10: brgreen  */*/
-/*     "#839496",  /* 11: bryellow */*/
-/*     "#657b83",  /* 12: brblue   */*/
-/*     "#6c71c4",  /* 13: brmagenta*/*/
-/*     "#586e75",  /* 14: brcyan   */*/
-/*     "#002b36",  /* 15: brwhite  */*/
-/* };*/
+// solarized light
+static const char *colorname[] = {
+    "#eee8d5",  
+    "#dc322f",  
+    "#859900",  
+    "#b58900",  
+    "#268bd2",  
+    "#d33682",  
+    "#2aa198",  
+    "#073642",  
+    "#fdf6e3",  
+    "#cb4b16",  
+    "#93a1a1",  
+    "#839496",  
+    "#657b83",  
+    "#6c71c4",  
+    "#586e75",  
+    "#002b36",  
+};
 
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 259;
-unsigned int defaultbg = 258;
-static unsigned int defaultcs = 256;
+unsigned int defaultfg = 12;
+unsigned int defaultbg = 0;
+static unsigned int defaultcs = 14;
 static unsigned int defaultrcs = 257;
 
 /*
