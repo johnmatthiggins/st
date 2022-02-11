@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Monospace:pixelsize=18:antialias=true:autohint=true";
+static char *font = "FiraCode:pixelsize=18:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -94,33 +94,61 @@ char *termname = "st";
 unsigned int tabspaces = 4;
 
 /* Terminal colors (16 first used in escape sequence) */
+/* static const char *colorname[] = { */
+/* 	/1* 8 normal colors *1/ */
+/* 	"black", */
+/* 	"red3", */
+/* 	"green3", */
+/* 	"yellow3", */
+/* 	"blue2", */
+/* 	"magenta3", */
+/* 	"cyan3", */
+/* 	"gray90", */
+
+/* 	/1* 8 bright colors *1/ */
+/* 	"gray50", */
+/* 	"red", */
+/* 	"green", */
+/* 	"yellow", */
+/* 	"#5c5cff", */
+/* 	"magenta", */
+/* 	"cyan", */
+/* 	"white", */
+
+/* 	[255] = 0, */
+
+/* 	/1* more colors can be added after 255 to use with DefaultXX *1/ */
+/* 	"#cccccc", */
+/* 	"#555555", */
+/* }; */
+
+static const char* colorname[] = {
+    [0] = "#323437",
+    [1] = "#ff5454",
+    [2] = "#8cc85f",
+    [3] = "#e3c78a",
+    [4] = "#80a0ff",
+    [5] = "#d183e8",
+    [6] = "#79dac8",
+    [7] = "#a1aab8",
+    [8] = "#7c8f8f",
+    [9] = "#ff5189",
+    [10] = "#36c692",
+    [11] = "#bfbf97",
+    [12] = "#74b2ff",
+    [13] = "#ae81ff",
+    [14] = "#85dc85",
+    [15] = "#e2637f",
+     
+    [255] = 0,
+    [256] = "#282a36", 
+    [257] = "#f8f8f2",
+    [258] = "#080808",
+    [259]= "#eeeeee",
+};
+
+// Gruvbox light theme.
 static const char *colorname[] = {
-	/* /1* 8 normal colors *1/ */
-	/* "black", */
-	/* "red3", */
-	/* "green3", */
-	/* "yellow3", */
-	/* "blue2", */
-	/* "magenta3", */
-	/* "cyan3", */
-	/* "gray90", */
-
-	/* /1* 8 bright colors *1/ */
-	/* "gray50", */
-	/* "red", */
-	/* "green", */
-	/* "yellow", */
-	/* "#5c5cff", */
-	/* "magenta", */
-	/* "cyan", */
-	/* "white", */
-
-	/* [255] = 0, */
-
-	/* /1* more colors can be added after 255 to use with DefaultXX *1/ */
-	/* "#cccccc", */
-	/* "#555555", */
-    /* solarized light */
     "#eee8d5",  /*  0: black    */
     "#dc322f",  /*  1: red      */
     "#859900",  /*  2: green    */
@@ -144,8 +172,8 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 7;
-unsigned int defaultbg = 0;
+unsigned int defaultfg = 259;
+unsigned int defaultbg = 258;
 static unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
 
