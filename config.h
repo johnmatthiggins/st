@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Hack:pixelsize=28:antialias=true:autohint=true";
+static char *font = "Comic Code:pixelsize=28:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -147,24 +147,25 @@ unsigned int tabspaces = 4;
 /*     [259]= "#eeeeee", */
 /* }; */
 
-// solarized light
 static const char *colorname[] = {
-    "#eee8d5",
-    "#dc322f",
-    "#859900",
-    "#b58900",
-    "#268bd2",
-    "#d33682",
-    "#2aa198",
-    "#073642",
-    "#fdf6e3",
-    "#cb4b16",
-    "#93a1a1",
-    "#839496",
-    "#657b83",
-    "#6c71c4",
-    "#586e75",
-    "#002b36",
+    "#000000",
+    "#de3d35",
+    "#3e953a",
+    "#d2b67b",
+    "#2f5af3",
+    "#a00095",
+    "#3e953a",
+    "#bbbbbb",
+    "#000000",
+    "#de3d35",
+    "#3e953a",
+    "#d2b67b",
+    "#2f5af3",
+    "#a00095",
+    "#3e953a",
+    "#ffffff",
+    [256] = "#f8f8f8",
+    [257] = "#2a2b33"
 };
 
 
@@ -172,8 +173,8 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 12;
-unsigned int defaultbg = 0;
+unsigned int defaultfg = 257;
+unsigned int defaultbg = 256;
 static unsigned int defaultcs = 14;
 static unsigned int defaultrcs = 257;
 
