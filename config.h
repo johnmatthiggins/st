@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Hack:pixelsize=20:antialias=true:autohint=true";
+static char *font = "Comic Code:pixelsize=16:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -147,25 +147,46 @@ unsigned int tabspaces = 4;
 /*     [259]= "#eeeeee", */
 /* }; */
 
+/* static const char *colorname[] = { */
+/*     "#000000", */
+/*     "#de3d35", */
+/*     "#3e953a", */
+/*     "#d2b67b", */
+/*     "#2f5af3", */
+/*     "#a00095", */
+/*     "#3e953a", */
+/*     "#bbbbbb", */
+/*     "#000000", */
+/*     "#de3d35", */
+/*     "#3e953a", */
+/*     "#d2b67b", */
+/*     "#2f5af3", */
+/*     "#a00095", */
+/*     "#3e953a", */
+/*     "#ffffff", */
+/*     [256] = "#f8f8f8", */
+/*     [257] = "#2a2b33" */
+/* }; */
+
 static const char *colorname[] = {
-    "#000000",
-    "#de3d35",
-    "#3e953a",
-    "#d2b67b",
-    "#2f5af3",
-    "#a00095",
-    "#3e953a",
-    "#bbbbbb",
-    "#000000",
-    "#de3d35",
-    "#3e953a",
-    "#d2b67b",
-    "#2f5af3",
-    "#a00095",
-    "#3e953a",
+    "#666666",
+    "#eb606b",
+    "#c3e88d",
+    "#f7eb95",
+    "#80cbc4",
+    "#ff2f90",
+    "#aeddff",
     "#ffffff",
-    [256] = "#f8f8f8",
-    [257] = "#2a2b33"
+    "#ff262b",
+    "#eb606b",
+    "#c3e88d",
+    "#f7eb95",
+    "#7dc6bf",
+    "#6c71c4",
+    "#35434d",
+    "#ffffff",
+    [256] = "#1e282d",
+    [257] = "#c4c7d1"
 };
 
 
