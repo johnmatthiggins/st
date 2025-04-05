@@ -16,7 +16,7 @@ static int borderpx = 2;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/usr/bin/fish";
+static char *shell = "/bin/sh";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
 char *scroll = NULL;
@@ -53,7 +53,7 @@ int allowwindowops = 0;
  * near minlatency, but it waits longer for slow updates to avoid partial draw.
  * low minlatency will tear/flicker more, as it can "detect" idle too early.
  */
-static double minlatency = 8;
+static double minlatency = 2;
 static double maxlatency = 33;
 
 /*
@@ -74,7 +74,7 @@ static unsigned int cursorthickness = 2;
 static int bellvolume = 0;
 
 /* default TERM value */
-char *termname = "st";
+char *termname = "onigiri";
 
 /*
  * spaces per tab
@@ -91,102 +91,37 @@ char *termname = "st";
  *
  *	stty tabs
  */
-unsigned int tabspaces = 4;
+unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
-/* static const char *colorname[] = { */
-/* 	/1* 8 normal colors *1/ */
-/* 	"black", */
-/* 	"red3", */
-/* 	"green3", */
-/* 	"yellow3", */
-/* 	"blue2", */
-/* 	"magenta3", */
-/* 	"cyan3", */
-/* 	"gray90", */
-
-/* 	/1* 8 bright colors *1/ */
-/* 	"gray50", */
-/* 	"red", */
-/* 	"green", */
-/* 	"yellow", */
-/* 	"#5c5cff", */
-/* 	"magenta", */
-/* 	"cyan", */
-/* 	"white", */
-
-/* 	[255] = 0, */
-
-/* 	/1* more colors can be added after 255 to use with DefaultXX *1/ */
-/* 	"#cccccc", */
-/* 	"#555555", */
-/* }; */
-
-/* static const char* colorname[] = { */
-/*     [0] = "#323437", */
-/*     [1] = "#ff5454", */
-/*     [2] = "#8cc85f", */
-/*     [3] = "#e3c78a", */
-/*     [4] = "#80a0ff", */
-/*     [5] = "#d183e8", */
-/*     [6] = "#79dac8", */
-/*     [7] = "#a1aab8", */
-/*     [8] = "#7c8f8f", */
-/*     [9] = "#ff5189", */
-/*     [10] = "#36c692", */
-/*     [11] = "#bfbf97", */
-/*     [12] = "#74b2ff", */
-/*     [13] = "#ae81ff", */
-/*     [14] = "#85dc85", */
-/*     [15] = "#e2637f", */
-     
-/*     [255] = 0, */
-/*     [256] = "#282a36", */ 
-/*     [257] = "#f8f8f2", */
-/*     [258] = "#080808", */
-/*     [259]= "#eeeeee", */
-/* }; */
-
-/* static const char *colorname[] = { */
-/*     "#000000", */
-/*     "#de3d35", */
-/*     "#3e953a", */
-/*     "#d2b67b", */
-/*     "#2f5af3", */
-/*     "#a00095", */
-/*     "#3e953a", */
-/*     "#bbbbbb", */
-/*     "#000000", */
-/*     "#de3d35", */
-/*     "#3e953a", */
-/*     "#d2b67b", */
-/*     "#2f5af3", */
-/*     "#a00095", */
-/*     "#3e953a", */
-/*     "#ffffff", */
-/*     [256] = "#f8f8f8", */
-/*     [257] = "#2a2b33" */
-/* }; */
-
 static const char *colorname[] = {
-    "#666666",
-    "#eb606b",
-    "#c3e88d",
-    "#f7eb95",
-    "#80cbc4",
-    "#ff2f90",
-    "#aeddff",
-    "#ffffff",
-    "#ff262b",
-    "#eb606b",
-    "#c3e88d",
-    "#f7eb95",
-    "#7dc6bf",
-    "#6c71c4",
-    "#35434d",
-    "#ffffff",
-    [256] = "#1e282d",
-    [257] = "#c4c7d1"
+	/* 8 normal colors */
+	"#4e4e4e",
+	"#ff6b60",
+	"#a7ff60",
+	"#ffffb6",
+	"#96cafd",
+	"#ff73fd",
+	"#c6c4fd",
+	"#eeeeee",
+
+	/* 8 bright colors */
+	"#7c7c7c",
+	"#ffb6b0",
+	"#ceffab",
+	"#ffffcb",
+	"#b5dcfe",
+	"#ff9cfe",
+	"#dfdffe",
+	"#ffffff",
+
+	[255] = 0,
+
+	/* more colors can be added after 255 to use with DefaultXX */
+	"#0000a3",
+	"#ffff4d",
+	"#ffa460", /* default foreground colour */
+	"#0000a3", /* default background colour */
 };
 
 
@@ -196,8 +131,8 @@ static const char *colorname[] = {
  */
 unsigned int defaultfg = 257;
 unsigned int defaultbg = 256;
-static unsigned int defaultcs = 14;
-static unsigned int defaultrcs = 257;
+unsigned int defaultcs = 258;
+static unsigned int defaultrcs = 259;
 
 /*
  * Default shape of cursor
@@ -258,8 +193,8 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-	{ XK_ANY_MOD,           XK_F12,         zoom,           {.f = +1} },
-	{ XK_ANY_MOD,           XK_F11,         zoom,           {.f = -1} },
+	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
+	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
 	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
