@@ -957,13 +957,15 @@ xloadfonts(char *fontstr, double fontsize)
 	FcPattern *pattern;
 	double fontval;
 
-	if (fontstr[0] == '-')
+	if (fontstr[0] == '-') {
 		pattern = XftXlfdParse(fontstr, False, False);
-	else
+	} else {
 		pattern = FcNameParse((FcChar8 *)fontstr);
+	}
 
-	if (!pattern)
+	if (!pattern) {
 		die("can't open font %s\n", fontstr);
+	}
 
 	if (fontsize > 1) {
 		FcPatternDel(pattern, FC_PIXEL_SIZE);
@@ -1300,6 +1302,8 @@ xmakeglyphfontspecs(XftGlyphFontSpec *specs, const Glyph *glyphs, int len, int x
 			FcPatternAddCharSet(fcpattern, FC_CHARSET,
 					fccharset);
 			FcPatternAddBool(fcpattern, FC_SCALABLE, 1);
+
+			FcPatternAddBool(fcpattern, FC_COLOR, 0);
 
 			FcConfigSubstitute(0, fcpattern,
 					FcMatchPattern);
