@@ -96,30 +96,30 @@ unsigned int tabspaces = 8;
 static const char *colorname[] = {
     /* 8 normal colors */
     "#000000",
-    "#cc0000",
-    "#00a600",
-    "#999900",
-    "#0000b2",
-    "#b200b2",
-    "#00a6b2",
-    "#cccccc",
+    "#cd0000",
+    "#00cd00",
+    "#cdcd00",
+    "#0000ee",
+    "#cd00cd",
+    "#00cdcd",
+    "#e5e5e5",
 
     /* 8 bright colors */
-    "#666666",
-    "#e50000",
-    "#00d900",
-    "#e5e500",
-    "#0000ff",
-    "#e500e5",
-    "#00e5e5",
-    "#e5e5e5",
+    "#7f7f7f",
+    "#ff0000",
+    "#00ff00",
+    "#ffff00",
+    "#5c5cff",
+    "#ff00ff",
+    "#00ffff",
+    "#ffffff",
 
     [255] = 0,
 
-    "#fef49c",
     "#000000",
-    "#7f7f7f",
-    "#fef49c",
+    "#ffffff",
+    "#000000",
+    "#ffffff",
 };
 
 /*
@@ -128,8 +128,8 @@ static const char *colorname[] = {
  */
 unsigned int defaultfg = 257;
 unsigned int defaultbg = 256;
-unsigned int defaultcs = 258;
-static unsigned int defaultrcs = 259;
+unsigned int defaultcs = 259;
+static unsigned int defaultrcs = 258;
 
 /*
  * Default shape of cursor
